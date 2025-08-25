@@ -675,19 +675,6 @@ body {
 #supportCheckbox:checked ~ div span {
   opacity: 1;
 }
-/* Pulse effect for the featured card */
-.featured-card {
-  animation: cardPulse 2s ease-in-out infinite alternate;
-}
-
-@keyframes cardPulse {
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(1.02);
-  }
-}
 
 .stars {
   width: 1px;
