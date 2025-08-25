@@ -676,6 +676,71 @@ body {
   opacity: 1;
 }
 
+/* Glowing electrical animation for featured pricing card */
+.featured-card {
+  position: relative;
+}
+
+.featured-card::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #8b5cf6, #06b6d4, #10b981, #f59e0b, #ef4444, #8b5cf6);
+  background-size: 400% 400%;
+  border-radius: inherit;
+  z-index: -1;
+  animation: electricGlow 3s ease-in-out infinite;
+  filter: blur(1px);
+}
+
+.featured-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: inherit;
+  border-radius: inherit;
+  z-index: -1;
+}
+
+@keyframes electricGlow {
+  0%, 100% {
+    background-position: 0% 50%;
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
+  }
+  25% {
+    background-position: 100% 50%;
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.5);
+  }
+  50% {
+    background-position: 100% 100%;
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.5);
+  }
+  75% {
+    background-position: 0% 100%;
+    box-shadow: 0 0 20px rgba(245, 158, 11, 0.5);
+  }
+}
+
+/* Pulse effect for the featured card */
+.featured-card {
+  animation: cardPulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes cardPulse {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.02);
+  }
+}
+
 .stars {
   width: 1px;
   height: 1px;
