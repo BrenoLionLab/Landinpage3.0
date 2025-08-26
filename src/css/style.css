@@ -524,6 +524,63 @@ body {
 .pricing-gradient-divider {
   background: linear-gradient(
     270deg,
+
+/* Master Card Glow Effect */
+.master-card-glow {
+  position: relative;
+  overflow: hidden;
+}
+
+.master-card-glow::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, 
+    transparent, 
+    rgba(255, 255, 255, 0.8), 
+    rgba(147, 51, 234, 0.6), 
+    rgba(255, 255, 255, 0.8), 
+    transparent
+  );
+  background-size: 400% 400%;
+  border-radius: 1.5rem;
+  z-index: -1;
+  animation: masterGlow 3s ease-in-out infinite;
+}
+
+.master-card-glow::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: inherit;
+  border-radius: 1.5rem;
+  z-index: -1;
+}
+
+@keyframes masterGlow {
+  0%, 100% {
+    background-position: 0% 50%;
+    opacity: 0.8;
+  }
+  25% {
+    background-position: 100% 0%;
+    opacity: 1;
+  }
+  50% {
+    background-position: 100% 100%;
+    opacity: 0.8;
+  }
+  75% {
+    background-position: 0% 100%;
+    opacity: 1;
+  }
+}
     rgba(255, 255, 255, 0) 0%,
     rgba(255, 255, 255, 0.12) 49.48%,
     rgba(255, 255, 255, 0) 100%
